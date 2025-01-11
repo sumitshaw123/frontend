@@ -41,7 +41,7 @@
         <h1>Complete Your Payment</h1>
         <h1>Support : 9832962953 </h1>
         <div class="payment-container">
-            <form id="payment-form">
+            <form id="payment-form" onsubmit="sendEmail(); rest(); return false;">
                 <div class="form-group">
                     <label for="plan">Select Plan:</label>
                     <select id="plan" name="plan" required>
@@ -67,10 +67,46 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Cardholder Name:</label>
-                    <input type="text" id="name" name="name" placeholder="Hydrex DranzR" required>
+                    <input type="text" id="name" name="name" placeholder="Enter cardholder name" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">Cardholder email_id:</label>
+                    <input type="text" id="email" name="email" placeholder="Enter cardholder email-id" required>
+
                 </div>
                 <button type="submit" class="btn pay-now">Pay Now</button>
             </form>
+            <script src="https://smtpjs.com/v3/smtp.js">
+
+            </script>
+            <script>
+              function sendEmail() {
+    const emailField = document.getElementById("email");
+    const email = emailField.value;
+
+    if (!email) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    Email.send({
+        Host: "smtp.gmail.com", // Replace with Elastic Email SMTP or other service
+        Username: "resumeproject8@gmail.com", // Replace with your SMTP username
+        Password: "Resume_@123", // Replace with your SMTP password
+        To: "shaw40829@gmail.com",
+        From: email,
+        Subject: "New Payment Inquiry",
+        Body: `
+            <p>Plan: ${document.getElementById("plan").value}</p>
+            <p>Name: ${document.getElementById("name").value}</p>
+            <p>Email: ${email}</p>
+        `
+    }).then(
+        message => alert("Email sent successfully: " )
+    ).catch(error => alert("Failed to send email: " ));
+}
+
+            </script>
         </div>
     </main>
 
