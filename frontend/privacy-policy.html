@@ -8,26 +8,40 @@
     <script src="register.js" defer></script>
     <link rel="stylesheet" href="animation.css">
     <script src="transition.js"></script>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">JobHub</div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="jobs.html">Jobs</a></li>
-                <li><a href="recruiters.html">Recruiters</a></li>
-                <li><a href="companies.html">Companies</a></li>
-                <li><a href="services.html">Services</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <a href="login.html">
-                    <button class="login">Login</button></a>
-                    <a href="register.html">
-                    <button class="register">Register</button></a>
+          <div class="nav-container">
+            <div class="logo">
+              <img
+                src="images/icon.png"
+                alt="JobHub Logo"
+                width="150"
+                height="65"
+              />
             </div>
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="jobs.html">Jobs</a></li>
+              <li><a href="recruiters.html">Recruiters</a></li>
+              <li><a href="companies.html">Companies</a></li>
+              <li><a href="services.html">Services</a></li>
+            </ul>
+            <div class="nav-buttons">
+              <a href="login.html" class="btn login">Login</a>
+              <a href="register.html" class="btn register">Register</a>
+              <a href="resume-builder.html" class="btn resume-builder"
+                >Build Your Resume</a
+              >
+            </div>
+            <div class="menu-toggle">
+              <i class="fas fa-bars"></i>
+            </div>
+          </div>
         </nav>
-    </header>
+      </header>
 
     <main class="privacy-policy-page">
         <section class="hero">
